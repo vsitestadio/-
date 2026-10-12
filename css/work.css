@@ -1,0 +1,417 @@
+@charset "utf-8";
+
+
+/* =========================
+   WORK DETAIL
+========================= */
+
+.work-detail {
+  width: 100%;
+  background: #fff;
+  color: #222;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.work-hero {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  align-items: center;
+  gap: 70px;
+
+  width: 80%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  padding: 80px 0 100px;
+}
+
+
+/* =========================
+   VISUAL
+========================= */
+
+.work-hero__visual {
+  position: relative;
+
+  min-height: 400px;
+}
+
+
+.work-pc {
+  width: 90%;
+
+  border: 1px solid #999;
+
+  box-shadow:
+    0 8px 25px
+    rgba(0, 0, 0, 0.08);
+}
+
+
+.work-sp {
+  position: absolute;
+
+  width: 30%;
+
+  right: 0;
+  bottom: 0;
+
+  box-shadow:
+    0 8px 25px
+    rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.work-hero__text h1 {
+  margin-bottom: 10px;
+
+  font-size: 2.8rem;
+  font-weight: 500;
+}
+
+
+.work-hero__text h1 span {
+  font-size: 1.8rem;
+}
+
+
+.work-role {
+  margin-bottom: 25px;
+
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+
+.work-hero__text > p {
+  margin-bottom: 18px;
+
+  font-size: 1.4rem;
+
+  line-height: 1.9;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.site-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 30px;
+
+  margin-top: 15px;
+
+  padding: 14px 25px;
+
+  border: 1px solid #222;
+
+  color: #222;
+
+  text-decoration: none;
+
+  font-size: 1.4rem;
+
+  transition: 0.3s;
+}
+
+
+.site-button:hover {
+  background: #222;
+  color: #fff;
+}
+
+
+.site-button span {
+  transition: 0.3s;
+}
+
+
+.site-button:hover span {
+  transform: translateX(5px);
+}
+
+
+/* =========================
+   FEATURE
+========================= */
+
+.feature {
+  width: 80%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 45px 0 70px;
+
+  border-top: 1px solid #ddd;
+}
+
+
+.feature h2 {
+  margin-bottom: 35px;
+
+  font-size: 2.3rem;
+  font-weight: 500;
+}
+
+
+/* =========================
+   FEATURE CONTENT
+========================= */
+
+.feature-content {
+  display: grid;
+
+  grid-template-columns: 1fr 1.2fr;
+
+  gap: 60px;
+
+  align-items: start;
+}
+
+
+/* =========================
+   VIDEO
+========================= */
+
+.feature-video {
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  background: #ddd;
+}
+
+
+.feature-video video {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  border: solid 3px #636363;
+}
+
+
+/* =========================
+   FEATURE TEXT
+========================= */
+
+.feature-description {
+  margin: 0 0 30px;
+
+  font-size: 1.4rem;
+
+  line-height: 1.9;
+}
+
+
+/* =========================
+   POINT
+========================= */
+
+.feature-point {
+  padding-top: 20px;
+
+  border-top: 1px solid #bbb;
+}
+
+
+.feature-point h3 {
+  margin-bottom: 18px;
+
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+
+.feature-point ul {
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+}
+
+
+.feature-point li {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 14px;
+
+  font-size: 1.35rem;
+}
+
+
+.feature-point li span {
+  width: 30px;
+
+  font-weight: 600;
+}
+
+
+/* =========================
+   BACK
+========================= */
+
+.back-button {
+  width: 80%;
+  max-width: 1200px;
+
+  margin: 20px auto 100px;
+
+  text-align: center;
+}
+
+
+.back-button a {
+  display: inline-block;
+
+  padding: 15px 30px;
+
+  border: 1px solid #222;
+
+  color: #222;
+
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+
+.back-button a:hover {
+  background: #222;
+  color: #fff;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media screen and (max-width: 1000px) {
+
+  .work-hero {
+    width: 90%;
+
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+
+  .work-hero__visual {
+    max-width: 650px;
+
+    margin: 0 auto;
+  }
+
+
+  .feature {
+    width: 90%;
+  }
+
+
+  .feature-content {
+    gap: 35px;
+  }
+
+}
+
+
+/* =========================
+   SMARTPHONE
+========================= */
+
+@media screen and (max-width: 768px) {
+
+  .work-hero {
+    width: 90%;
+
+    padding: 50px 0 70px;
+  }
+
+
+  .work-hero__visual {
+    min-height: 280px;
+  }
+
+
+  .work-pc {
+    width: 85%;
+  }
+
+
+  .work-sp {
+    width: 28%;
+  }
+
+
+  .work-hero__text h1 {
+    font-size: 2.3rem;
+  }
+
+
+  .work-hero__text h1 span {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 1.5rem;
+  }
+
+
+  .feature {
+    padding: 35px 0 55px;
+  }
+
+
+  .feature h2 {
+    margin-bottom: 25px;
+
+    font-size: 2rem;
+  }
+
+
+  .feature-content {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+
+  .feature-description {
+    font-size: 1.35rem;
+  }
+
+
+  .feature-point li {
+    align-items: flex-start;
+
+    font-size: 1.3rem;
+  }
+
+
+  .back-button {
+    width: 90%;
+  }
+
+}

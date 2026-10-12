@@ -1,0 +1,107 @@
+@charset "utf-8";
+/* =========================
+   Reset
+========================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+
+/* =========================
+   Base
+========================= */
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family:
+    "Noto Sans JP",
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    sans-serif;
+
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #222;
+  background-color: #fff;
+}
+header{
+  position: sticky;
+  top: 0;
+  display: flex;
+  padding: 20px 10%;
+  align-items: center;
+  text-align: center;
+  background-color: #2E2E2E;
+  border-bottom: 2px solid #B1B1B1;
+  width: 100%;
+  z-index: 100;
+}
+.logo{
+  font-size: 30px;
+  color: #fff;
+}
+.nav{
+  display: flex;
+  margin-left: auto;
+  column-gap: 50px;
+}
+.main-text{
+  font-size: 20px;
+  color: #fff;
+}
+.sub-text{
+  font-size: 12px;
+  margin-top: -10px;
+  color: #CEC7C7;
+}

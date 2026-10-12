@@ -1,0 +1,1328 @@
+@charset "utf-8";
+
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero {
+  position: relative;
+
+  width: 100%;
+  height: calc(100vh - 80px);
+
+  min-height: 650px;
+
+  overflow: hidden;
+
+  background: #1e1e1e;
+}
+
+
+/* ==================================================
+   OPENING
+================================================== */
+
+.hero-opening {
+  position: absolute;
+  inset: 0;
+
+  z-index: 20;
+
+  overflow: hidden;
+
+  background: #1e1e1e;
+}
+
+
+.hero-collage {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+}
+
+
+/* ==================================================
+   すべての写真を同じサイズにする
+================================================== */
+
+.opening-photo {
+  position: absolute;
+
+  width: 25%;
+  height: 33.333%;
+
+  object-fit: cover;
+
+  opacity: 0;
+
+  box-shadow:
+    0 3px 10px
+    rgba(0, 0, 0, 0.12);
+
+  animation:
+    collagePhotoIn
+    1.5s
+    cubic-bezier(.16, .8, .25, 1)
+    forwards;
+}
+
+
+/* ==================================================
+   4列 × 3段
+   12枚で画面全体を埋める
+================================================== */
+
+
+/* 1段目 */
+
+.opening-photo--01 {
+  top: 0;
+  left: 0;
+
+  --start-x: 38vw;
+  --start-y: 32vh;
+
+  animation-delay: 0s;
+}
+
+
+.opening-photo--02 {
+  top: 0;
+  left: 25%;
+
+  --start-x: 13vw;
+  --start-y: 32vh;
+
+  animation-delay: .06s;
+}
+
+
+.opening-photo--03 {
+  top: 0;
+  left: 50%;
+
+  --start-x: -12vw;
+  --start-y: 32vh;
+
+  animation-delay: .12s;
+}
+
+
+.opening-photo--04 {
+  top: 0;
+  left: 75%;
+
+  --start-x: -37vw;
+  --start-y: 32vh;
+
+  animation-delay: .18s;
+}
+
+
+/* 2段目 */
+
+.opening-photo--05 {
+  top: 33.333%;
+  left: 0;
+
+  --start-x: 38vw;
+  --start-y: 0;
+
+  animation-delay: .24s;
+}
+
+
+.opening-photo--06 {
+  top: 33.333%;
+  left: 25%;
+
+  --start-x: 13vw;
+  --start-y: 0;
+
+  animation-delay: .30s;
+}
+
+
+.opening-photo--07 {
+  top: 33.333%;
+  left: 50%;
+
+  --start-x: -12vw;
+  --start-y: 0;
+
+  animation-delay: .36s;
+}
+
+
+.opening-photo--08 {
+  top: 33.333%;
+  left: 75%;
+
+  --start-x: -37vw;
+  --start-y: 0;
+
+  animation-delay: .42s;
+}
+
+
+/* 3段目 */
+
+.opening-photo--09 {
+  top: 66.666%;
+  left: 0;
+
+  --start-x: 38vw;
+  --start-y: -32vh;
+
+  animation-delay: .48s;
+}
+
+
+.opening-photo--10 {
+  top: 66.666%;
+  left: 25%;
+
+  --start-x: 13vw;
+  --start-y: -32vh;
+
+  animation-delay: .54s;
+}
+
+
+.opening-photo--11 {
+  top: 66.666%;
+  left: 50%;
+
+  --start-x: -12vw;
+  --start-y: -32vh;
+
+  animation-delay: .60s;
+}
+
+
+.opening-photo--12 {
+  top: 66.666%;
+  left: 75%;
+
+  --start-x: -37vw;
+  --start-y: -32vh;
+
+  animation-delay: .66s;
+}
+
+
+/* ==================================================
+   最初は中央付近に全部重なっている
+================================================== */
+
+@keyframes collagePhotoIn {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translate(
+        var(--start-x),
+        var(--start-y)
+      )
+      scale(1.08);
+  }
+
+
+  15% {
+    opacity: 1;
+  }
+
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translate(0, 0)
+      scale(1);
+  }
+
+}
+
+
+/* ==================================================
+   WHITE OUT
+================================================== */
+
+.hero-white {
+  position: absolute;
+  inset: 0;
+
+  z-index: 30;
+
+  background: #fff;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+
+/* ホワイトアウト開始 */
+
+.hero-white.is-active {
+
+  animation:
+    heroWhiteOut
+    1.4s
+    ease-in-out
+    forwards;
+
+}
+
+
+@keyframes heroWhiteOut {
+
+  /*
+   最初は透明
+  */
+
+  0% {
+
+    opacity: 0;
+
+  }
+
+
+  /*
+   真っ白になる
+  */
+
+  40% {
+
+    opacity: 1;
+
+  }
+
+
+  /*
+   少し白を維持
+  */
+
+  60% {
+
+    opacity: 1;
+
+  }
+
+
+  /*
+   白が消えて最終画像が出る
+  */
+
+  100% {
+
+    opacity: 0;
+
+  }
+
+}
+
+
+/* ==================================================
+   FINAL HERO
+================================================== */
+
+.hero-final {
+  position: absolute;
+  inset: 0;
+
+  z-index: 10;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+
+  background: #fff;
+}
+
+
+/* 最終画像 */
+
+.hero-final img {
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+}
+
+
+/* 最終画像表示 */
+
+.hero-final.is-show {
+
+  opacity: 1;
+
+}
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 12px;
+
+  margin-top: 100px;
+  margin-bottom: 50px;
+
+  border-bottom:
+    1px solid #ddd;
+}
+
+
+.section-title h2 {
+  margin: 0;
+
+  font-size: 4rem;
+
+  font-weight: 400;
+
+  line-height: 1;
+}
+
+
+.section-title p {
+  margin: 0;
+
+  font-size: 1.8rem;
+}
+
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+  width: 100%;
+
+  margin: 0 auto;
+}
+
+
+.about-card {
+  display: grid;
+
+  grid-template-columns:
+    1.1fr
+    0.9fr;
+
+  gap: 70px;
+
+  width: 80%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 45px;
+
+  border:
+    3px solid #222;
+}
+
+
+
+/* =========================
+   ABOUT LEFT
+========================= */
+
+.about-left {
+  min-width: 0;
+}
+
+
+.about-name {
+  margin-bottom: 30px;
+}
+
+
+.name-kana {
+  margin-bottom: 2px;
+
+  font-size: 1.4rem;
+}
+
+
+.about-name h3 {
+  margin: 0;
+
+  font-size: 2.8rem;
+
+  font-weight: 500;
+}
+
+
+.about-info {
+  margin-bottom: 20px;
+}
+
+
+.about-info p {
+  margin-bottom: 12px;
+
+  font-size: 1.5rem;
+}
+
+
+.about-info span {
+  font-weight: 500;
+}
+
+
+
+/* =========================
+   ABOUT GRAPH
+========================= */
+
+.about-graph {
+  width: 100%;
+
+  max-width: 430px;
+
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.radar-chart {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  overflow: visible;
+}
+
+
+
+/* グラフ枠 */
+
+.grid-line {
+  fill: none;
+
+  stroke: #b8c0c8;
+
+  stroke-width: 1.5;
+}
+
+
+
+/* =========================
+   SKILL AREA
+========================= */
+
+.skill-area {
+  fill:
+    rgba(
+      162,
+      236,
+      255,
+      0.55
+    );
+
+  stroke: #4eb9e6;
+
+  stroke-width: 2;
+
+  opacity: 0;
+
+  transform:
+    scale(0);
+
+  transform-origin:
+    center;
+
+  transform-box:
+    fill-box;
+}
+
+
+.about-graph.is-active
+.skill-area {
+
+  animation:
+    showRadar
+    1.2s
+    cubic-bezier(
+      .22,
+      .8,
+      .3,
+      1
+    )
+    forwards;
+}
+
+
+@keyframes showRadar {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      scale(0);
+  }
+
+
+  70% {
+    opacity: 0.8;
+
+    transform:
+      scale(1.04);
+  }
+
+
+  100% {
+    opacity: 1;
+
+    transform:
+      scale(1);
+  }
+
+}
+
+
+
+/* =========================
+   GRAPH ICON BACKGROUND
+========================= */
+
+.graph-icon-bg {
+  fill: #e6f5fc;
+
+  opacity: 0;
+
+  transform:
+    scale(0.7);
+
+  transform-origin:
+    center;
+
+  transform-box:
+    fill-box;
+}
+
+
+.about-graph.is-active
+.graph-icon-bg {
+
+  animation:
+    showGraphIcon
+    0.5s
+    ease
+    forwards;
+
+  animation-delay:
+    0.75s;
+}
+
+
+
+/* =========================
+   GRAPH ICON
+========================= */
+
+.graph-icon {
+  opacity: 0;
+
+  transform:
+    scale(0.7);
+
+  transform-origin:
+    center;
+
+  transform-box:
+    fill-box;
+}
+
+
+.about-graph.is-active
+.graph-icon {
+
+  animation:
+    showGraphIcon
+    0.5s
+    ease
+    forwards;
+
+  animation-delay:
+    0.85s;
+}
+
+
+@keyframes showGraphIcon {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      scale(0.7);
+  }
+
+
+  100% {
+    opacity: 1;
+
+    transform:
+      scale(1);
+  }
+
+}
+
+
+
+/* =========================
+   GRAPH LABEL
+========================= */
+
+.graph-label {
+  fill: #222;
+
+  font-family:
+    "Noto Sans JP",
+    sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  opacity: 0;
+}
+
+
+.about-graph.is-active
+.graph-label {
+
+  animation:
+    showGraphLabel
+    0.5s
+    ease
+    forwards;
+
+  animation-delay:
+    0.95s;
+}
+
+
+@keyframes showGraphLabel {
+
+  0% {
+    opacity: 0;
+  }
+
+
+  100% {
+    opacity: 1;
+  }
+
+}
+
+
+
+/* =========================
+   ABOUT RIGHT
+========================= */
+
+.about-right {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+
+  margin-bottom: 25px;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+}
+
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+
+/* =========================
+   ABOUT TEXT
+========================= */
+
+.about-text {
+  width: 100%;
+
+  margin-top: auto;
+}
+
+
+.about-text h3 {
+  margin-bottom: 15px;
+
+  font-size: 2.4rem;
+
+  font-weight: 500;
+}
+
+
+.about-text p {
+  margin-bottom: 18px;
+
+  font-size: 1.5rem;
+
+  line-height: 1.7;
+}
+
+
+
+/* =========================
+   WORK
+========================= */
+
+.work-list {
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  gap: 40px;
+
+  width: 80%;
+
+  margin: 0 auto;
+}
+
+
+.work-item {
+  width: 48%;
+}
+
+
+.work-item img {
+  width: 100%;
+}
+
+
+.work-list p {
+  margin-top: 10px;
+
+  font-size: 15px;
+}
+
+
+
+/* =========================
+   SKILL
+========================= */
+
+.skill-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 20px;
+
+  width: 80%;
+
+  margin: 0 auto;
+}
+
+
+.skill-card {
+  padding: 25px 28px;
+
+  border:
+    2px solid #222;
+
+  background: #fff;
+}
+
+
+
+/* =========================
+   SKILL CARD HEADER
+========================= */
+
+.skill-card__head {
+  display: grid;
+
+  grid-template-columns:
+    60px
+    1fr;
+
+  gap: 15px;
+
+  margin-bottom: 5px;
+
+  padding-bottom: 20px;
+
+  border-bottom:
+    1px solid #aaa;
+}
+
+
+.skill-card__number {
+  font-size: 3rem;
+
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+
+.skill-card__head h3 {
+  margin:
+    0
+    0
+    8px;
+
+  font-size: 2.8rem;
+
+  font-weight: 500;
+}
+
+
+.skill-card__head h3 span {
+  margin-left: 8px;
+
+  font-size: 1.3rem;
+
+  font-weight: 400;
+}
+
+
+.skill-card__head p {
+  margin: 0;
+
+  font-size: 1.3rem;
+
+  line-height: 1.6;
+}
+
+
+
+/* =========================
+   SKILL ITEM
+========================= */
+
+.skill-item {
+  display: grid;
+
+  grid-template-columns:
+    150px
+    150px
+    1fr;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding:
+    18px
+    0;
+
+  border-bottom:
+    1px solid #ddd;
+}
+
+
+.skill-item:last-child {
+  border-bottom: none;
+}
+
+
+
+/* =========================
+   SKILL NAME
+========================= */
+
+.skill-item__name {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.skill-item__name h4 {
+  margin: 0;
+
+  font-size: 1.5rem;
+
+  font-weight: 500;
+}
+
+
+
+/* =========================
+   SKILL ICON
+========================= */
+
+.skill-icon {
+  display: grid;
+
+  place-items: center;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 6px;
+
+  background: #f2f2f2;
+
+  font-size: 1.1rem;
+
+  font-weight: 700;
+}
+
+
+
+/* =========================
+   SKILL LEVEL
+========================= */
+
+.skill-level {
+  display: flex;
+
+  gap: 4px;
+}
+
+
+.skill-level span {
+  display: block;
+
+  width: 24px;
+  height: 7px;
+
+  border-radius: 10px;
+
+  background: #ddd;
+}
+
+
+.skill-level .active {
+  background: #333;
+}
+
+
+
+/* =========================
+   SKILL DESCRIPTION
+========================= */
+
+.skill-item > p {
+  margin: 0;
+
+  font-size: 1.25rem;
+
+  line-height: 1.6;
+}
+
+
+
+/* =========================
+   SKILL COLOR
+========================= */
+
+.skill-card--frontend
+.skill-card__number {
+
+  color: #ff6b81;
+}
+
+
+.skill-card--frontend
+.skill-level
+.active {
+
+  background: #ff6b81;
+}
+
+
+.skill-card--design
+.skill-card__number {
+
+  color: #56a8ff;
+}
+
+
+.skill-card--design
+.skill-level
+.active {
+
+  background: #56a8ff;
+}
+
+
+.skill-card--development
+.skill-card__number {
+
+  color: #8a63e8;
+}
+
+
+.skill-card--development
+.skill-level
+.active {
+
+  background: #8a63e8;
+}
+
+
+.skill-card--other
+.skill-card__number {
+
+  color: #46c28b;
+}
+
+
+.skill-card--other
+.skill-level
+.active {
+
+  background: #46c28b;
+}
+
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media screen and
+(max-width: 1000px) {
+
+  .skill-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .about-card {
+    width: 90%;
+
+    grid-template-columns:
+      1fr
+      1fr;
+
+    gap: 40px;
+  }
+
+}
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media screen and
+(max-width: 768px) {
+  .hero {
+
+    height: 70vh;
+    min-height: 520px;
+
+  }
+
+  .hero-main {
+    grid-template-columns:
+      1fr
+      1fr;
+
+    grid-template-rows:
+      180px
+      300px
+      180px;
+
+    grid-template-areas:
+      "photo01 photo04"
+      "photo03 photo03"
+      "photo02 photo05";
+
+    gap: 12px;
+
+    padding:
+      20px;
+  }
+
+
+  .about {
+    padding:
+      60px
+      20px;
+  }
+
+
+  .section-title {
+    margin-top: 60px;
+
+    margin-bottom: 30px;
+  }
+
+
+  .section-title h2 {
+    font-size: 3.2rem;
+  }
+
+
+  .section-title p {
+    font-size: 1.5rem;
+  }
+
+
+  .about-card {
+    width: 100%;
+
+    grid-template-columns:
+      1fr;
+
+    gap: 40px;
+
+    padding:
+      30px
+      20px;
+  }
+
+
+  .about-left {
+    order: 1;
+  }
+
+
+  .about-right {
+    order: 2;
+  }
+
+
+  .about-graph {
+    max-width: 400px;
+  }
+
+
+  .profile-image {
+    width: 120px;
+    height: 120px;
+  }
+
+
+  .about-name h3 {
+    font-size: 2.4rem;
+  }
+
+
+  .about-text h3 {
+    font-size: 2rem;
+  }
+
+
+  .work-list {
+    width: 90%;
+
+    flex-direction: column;
+  }
+
+
+  .work-item {
+    width: 100%;
+  }
+
+}
+
+
+
+/* =========================
+   SMARTPHONE
+========================= */
+
+@media screen and
+(max-width: 600px) {
+
+  .skill {
+    padding:
+      60px
+      20px;
+  }
+
+
+  .section-title h2 {
+    font-size: 3.2rem;
+  }
+
+
+  .section-title p {
+    font-size: 1.4rem;
+  }
+
+
+  .skill-card {
+    padding: 20px;
+  }
+
+
+  .skill-card__head {
+    grid-template-columns:
+      45px
+      1fr;
+  }
+
+
+  .skill-card__number {
+    font-size: 2.4rem;
+  }
+
+
+  .skill-card__head h3 {
+    font-size: 2.2rem;
+  }
+
+
+  .skill-item {
+    grid-template-columns:
+      1fr;
+
+    gap: 10px;
+  }
+
+
+  .skill-level span {
+    width: 32px;
+  }
+
+
+  .about-graph {
+    max-width: 330px;
+  }
+
+
+  .graph-label {
+    font-size: 13px;
+  }
+
+}
