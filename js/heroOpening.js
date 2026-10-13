@@ -10,21 +10,17 @@ window.addEventListener("load", () => {
     document.getElementById("heroFinal");
 
 
-  /*
-   ①
-   ページ読み込み直後
+  // HEROが存在しないページでは処理を終了
+  if (
+    !heroOpening ||
+    !heroWhite ||
+    !heroFinal
+  ) {
+    return;
+  }
 
-   CSSによって
-   コラージュアニメーション開始
-  */
 
-
-  /*
-   ②
-   コラージュ完成後、
-   少しだけ完成状態を見せる
-  */
-
+  // ホワイトアウト開始
   setTimeout(() => {
 
     heroWhite.classList.add(
@@ -34,13 +30,7 @@ window.addEventListener("load", () => {
   }, 2400);
 
 
-
-  /*
-   ③
-   画面が真っ白になっている間に
-   裏側を最終画像へ切り替える
-  */
-
+  // 最終画像へ切り替え
   setTimeout(() => {
 
     heroFinal.classList.add(
@@ -52,13 +42,7 @@ window.addEventListener("load", () => {
   }, 3000);
 
 
-
-  /*
-   ④
-   ホワイトアウト終了後
-   オープニングを削除
-  */
-
+  // オープニング画像を非表示
   setTimeout(() => {
 
     heroOpening.style.display = "none";
