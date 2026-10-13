@@ -1,7 +1,9 @@
 @charset "utf-8";
-/* =========================
-   Reset
-========================= */
+
+
+/* ==================================================
+   RESET
+================================================== */
 
 *,
 *::before,
@@ -9,37 +11,48 @@
   box-sizing: border-box;
 }
 
+
 html {
   scroll-behavior: smooth;
+  font-size: 62.5%;
 }
+
 
 body,
 h1,
 h2,
 h3,
+h4,
 p,
 ul,
 ol,
-li {
+li,
+dl,
+dt,
+dd {
   margin: 0;
   padding: 0;
 }
+
 
 ul,
 ol {
   list-style: none;
 }
 
+
 a {
   color: inherit;
   text-decoration: none;
 }
+
 
 img {
   display: block;
   max-width: 100%;
   height: auto;
 }
+
 
 button,
 input,
@@ -48,6 +61,7 @@ select {
   font: inherit;
 }
 
+
 button {
   border: none;
   background: none;
@@ -55,13 +69,9 @@ button {
 }
 
 
-/* =========================
-   Base
-========================= */
-
-html {
-  font-size: 62.5%;
-}
+/* ==================================================
+   BASE
+================================================== */
 
 body {
   font-family:
@@ -72,36 +82,242 @@ body {
 
   font-size: 1.6rem;
   line-height: 1.7;
+
   color: #222;
-  background-color: #fff;
+  background: #fff;
 }
-header{
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+header {
   position: sticky;
   top: 0;
-  display: flex;
-  padding: 20px 10%;
-  align-items: center;
-  text-align: center;
-  background-color: #2E2E2E;
-  border-bottom: 2px solid #B1B1B1;
-  width: 100%;
+
   z-index: 100;
-}
-.logo{
-  font-size: 30px;
-  color: #fff;
-}
-.nav{
+
   display: flex;
-  margin-left: auto;
-  column-gap: 50px;
+  align-items: center;
+
+  width: 100%;
+
+  padding: 18px 10%;
+
+  background: #2e2e2e;
+
+  border-bottom: 2px solid #b1b1b1;
 }
-.main-text{
-  font-size: 20px;
+
+
+.logo {
+  flex-shrink: 0;
+
+  font-size: 3rem;
+  line-height: 1.2;
+
   color: #fff;
 }
-.sub-text{
-  font-size: 12px;
-  margin-top: -10px;
-  color: #CEC7C7;
+
+
+.nav {
+  display: flex;
+  align-items: center;
+
+  gap: 50px;
+
+  margin-left: auto;
+}
+
+
+.nav-item a {
+  display: block;
+
+  text-align: center;
+
+  transition: opacity 0.3s ease;
+}
+
+
+.nav-item a:hover {
+  opacity: 0.65;
+}
+
+
+.main-text {
+  font-size: 2rem;
+  line-height: 1.3;
+
+  color: #fff;
+}
+
+
+.sub-text {
+  margin-top: 0;
+
+  font-size: 1.2rem;
+  line-height: 1.3;
+
+  color: #cec7c7;
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+  margin-top: 100px;
+
+  padding: 30px;
+
+  background: #bcbcbc;
+
+  font-size: 2rem;
+}
+
+
+.contact {
+  width: fit-content;
+
+  margin: 0 auto;
+}
+
+
+.contact p {
+  margin: 5px 0;
+
+  text-align: left;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media screen and (max-width: 1000px) {
+
+  header {
+    padding:
+      16px
+      5%;
+  }
+
+
+  .logo {
+    font-size: 2.4rem;
+  }
+
+
+  .nav {
+    gap: 25px;
+  }
+
+
+  .main-text {
+    font-size: 1.7rem;
+  }
+
+
+  .sub-text {
+    font-size: 1.1rem;
+  }
+
+}
+
+
+/* ==================================================
+   SMARTPHONE
+================================================== */
+
+@media screen and (max-width: 768px) {
+
+  header {
+    flex-direction: column;
+
+    gap: 12px;
+
+    padding:
+      12px
+      20px;
+  }
+
+
+  .logo {
+    font-size: 2.2rem;
+  }
+
+
+  .nav {
+    width: 100%;
+
+    justify-content: center;
+
+    gap: 0;
+
+    margin-left: 0;
+  }
+
+
+  .nav-item {
+    flex: 1;
+  }
+
+
+  .main-text {
+    font-size: 1.3rem;
+  }
+
+
+  .sub-text {
+    display: none;
+  }
+
+
+  footer {
+    margin-top: 70px;
+
+    padding:
+      25px
+      20px;
+
+    font-size: 1.5rem;
+  }
+
+}
+
+
+/* ==================================================
+   SMALL SMARTPHONE
+================================================== */
+
+@media screen and (max-width: 480px) {
+
+  header {
+    padding:
+      10px
+      12px;
+  }
+
+
+  .logo {
+    font-size: 2rem;
+  }
+
+
+  .main-text {
+    font-size: 1.1rem;
+  }
+
+
+  .contact {
+    width: 100%;
+  }
+
+
+  .contact p {
+    overflow-wrap: anywhere;
+  }
+
 }
