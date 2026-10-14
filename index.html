@@ -60,6 +60,102 @@
 
 </header>
 
+<!-- =========================
+     OPENING
+========================= -->
+
+<div
+  class="hero-opening"
+  id="heroOpening"
+>
+
+  <div class="hero-collage">
+
+    <img
+      src="img/opening/open01.png"
+      class="opening-photo opening-photo--01"
+      alt=""
+    >
+
+    <img
+      src="img/opening/open02.png"
+      class="opening-photo opening-photo--02"
+      alt=""
+    >
+
+    <img
+      src="img/opening/open03.png"
+      class="opening-photo opening-photo--03"
+      alt=""
+    >
+
+    <img
+      src="img/opening/open04.png"
+      class="opening-photo opening-photo--04"
+      alt=""
+    >
+
+    <img
+      src="img/opening/open05.png"
+      class="opening-photo opening-photo--05"
+      alt=""
+    >
+
+    <img
+      src="img/opening/open06.png"
+      class="opening-photo opening-photo--06"
+      alt=""
+    >
+
+    <img
+      src="img/opening/open07.png"
+      class="opening-photo opening-photo--07"
+      alt=""
+    >
+
+    <img
+      src="img/opening/open08.png"
+      class="opening-photo opening-photo--08"
+      alt=""
+    >
+
+    <img
+      src="img/opening/open09.png"
+      class="opening-photo opening-photo--09"
+      alt=""
+    >
+
+    <img
+      src="img/opening/open10.png"
+      class="opening-photo opening-photo--10"
+      alt=""
+    >
+
+    <img
+      src="img/opening/open11.png"
+      class="opening-photo opening-photo--11"
+      alt=""
+    >
+
+    <img
+      src="img/opening/open12.png"
+      class="opening-photo opening-photo--12"
+      alt=""
+    >
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     WHITE OUT
+========================= -->
+
+<div
+  class="hero-white"
+  id="heroWhite"
+></div>
 
 <!-- =========================
      HERO
@@ -67,103 +163,10 @@
 
 <section class="hero" id="home">
 
-  <!-- =================================
-       最初に表示するコラージュ
-  ================================== -->
-
-  <div class="hero-opening" id="heroOpening">
-
-    <div class="hero-collage">
-
-      <img
-        src="img/opening/open01.png"
-        class="opening-photo opening-photo--01"
-        alt=""
-      >
-
-      <img
-        src="img/opening/open02.png"
-        class="opening-photo opening-photo--02"
-        alt=""
-      >
-
-      <img
-        src="img/opening/open03.png"
-        class="opening-photo opening-photo--03"
-        alt=""
-      >
-
-      <img
-        src="img/opening/open04.png"
-        class="opening-photo opening-photo--04"
-        alt=""
-      >
-
-      <img
-        src="img/opening/open05.png"
-        class="opening-photo opening-photo--05"
-        alt=""
-      >
-
-      <img
-        src="img/opening/open06.png"
-        class="opening-photo opening-photo--06"
-        alt=""
-      >
-
-      <img
-        src="img/opening/open07.png"
-        class="opening-photo opening-photo--07"
-        alt=""
-      >
-
-      <img
-        src="img/opening/open08.png"
-        class="opening-photo opening-photo--08"
-        alt=""
-      >
-
-      <img
-        src="img/opening/open09.png"
-        class="opening-photo opening-photo--09"
-        alt=""
-      >
-
-      <img
-        src="img/opening/open10.png"
-        class="opening-photo opening-photo--10"
-        alt=""
-      >
-
-      <img
-        src="img/opening/open11.png"
-        class="opening-photo opening-photo--11"
-        alt=""
-      >
-
-      <img
-        src="img/opening/open12.png"
-        class="opening-photo opening-photo--12"
-        alt=""
-      >
-
-    </div>
-
-  </div>
-
-
-  <!-- =================================
-       ホワイトアウト
-  ================================== -->
-
-  <div class="hero-white" id="heroWhite"></div>
-
-
-  <!-- =================================
-       最終的に表示するメイン画像
-  ================================== -->
-
-  <div class="hero-final" id="heroFinal">
+  <div
+    class="hero-final"
+    id="heroFinal"
+  >
 
     <img
       src="img/main.png"
@@ -378,15 +381,12 @@
                青いスキル領域
           ====================== -->
 
-          <polygon
-            class="skill-area"
-            points="
-              250,118
-              365,208
-              318,342
-              185,338
-              135,208
-            "
+          <polygon class="skill-area" 
+            points="250,130
+            360,210
+            335,365
+            174,353
+            140,210"
           />
 
 
@@ -1332,6 +1332,16 @@
 
 <script src="js/graph.js"></script>
 <script src="js/heroOpening.js"></script>
+<script>
+  if (
+    new URLSearchParams(window.location.search)
+      .get("skipOpening") === "1"
+  ) {
+    document.documentElement.classList.add(
+      "skip-opening"
+    );
+  }
+</script>
 
 </body>
 </html>
